@@ -1,0 +1,47 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.6.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	// tag::jetty[]
+	compile("org.springframework.boot:spring-boot-starter-web") {
+		exclude module: "spring-boot-starter-tomcat"
+	}
+  //jpa
+	compile("org.springframework.boot:spring-boot-starter-data-jpa")
+	compile("com.h2database:h2")
+	compile("org.springframework.boot:spring-boot-starter-jetty")
+	compile('joda-time:joda-time:2.1')
+	// https://mvnrepository.com/artifact/org.springframework/spring-test
+	testCompile group: 'org.springframework', name: 'spring-test', version: '4.3.9.RELEASE'
+
+
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+	testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.2.RELEASE'
+
+	// end::jetty[]
+	// tag::actuator[]
+	compile("org.springframework.boot:spring-boot-starter-actuator")
+	// end::actuator[]
+	testCompile("junit:junit")
+}

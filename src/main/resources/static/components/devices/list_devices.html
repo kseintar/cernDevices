@@ -1,0 +1,93 @@
+<navigation></navigation>
+
+<div class="container">
+    <h2>Device database</h2>
+    <p>You can add delete and update our devices</p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Device</th>
+            <th>Property</th>
+            <th>Field</th>
+            <th>AQN</th>
+            <th>Last Edit</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="x in devices">
+            <td>{{ x.name }}  </td>
+            <td>{{ x.description }}</td>
+            <td>{{ x.owner }}</td>
+            <td>{{ x.weight }}</td>
+            <td>{{ x.createDate | date:'dd-MM-yyyy'}}</td>
+
+            <td><button class="" ng-click="deleteDevice(x.id)"> Delete </button></td>
+            <td><button class="" ng-click="getDevice(x.id)"> Update </button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<div class="row">
+
+<div    class="col-sm-8 col-sm-offset-2" style="background-color:#808080"   class="container" >
+    <form  ng-submit="updateDevice()" >
+        <div class="form-group">
+            <label for="name">Device:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter Device" name="name" ng-model="device.name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Property:</label>
+            <textarea rows="4" cols="50"  name="description"  class="form-control input-sm" placeholder="Property"  ng-model="device.description" required>
+                </textarea>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="owner">Field:</label>
+            <input type="text" class="form-control" id="owner" placeholder="Field" name="owner" ng-model="device.owner" required>
+        </div>
+
+        <div class="form-group">
+            <label for="weight">AQN:</label>
+            <input type="number" class="form-control" id="weight" placeholder="AQN" name="weight" ng-model="device.weight" required>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+
+    </form>
+</div>
+
+    <div class="alert alert-success col-sm-2" ng-show="success">
+        <strong>Changes were saved successfully!</strong>
+    </div>
+
+
+
+
+
+</div>
+
+
+
+<div class="row">
+
+<style>
+    .bg-4 {
+        background-color: #2f2f2f;
+        color: #ffffff;
+    }
+</style>
+
+<footer class="container-fluid bg-4 text-center">
+    <p>Made By Konstantinos Seintaridis </p>
+</footer>
+
+
+</div>

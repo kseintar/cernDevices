@@ -1,0 +1,37 @@
+<navigation></navigation>
+<div class="container">
+    <form ng-submit="signup()" >
+        <div class="form-group">
+            <label for="firstname">First name:</label>
+            <input type="text" class="form-control" id="firstname" placeholder="Enter First Name" name="firstname" ng-model="user.firstname" required>
+        </div>
+
+        <div class="form-group">
+            <label for="lastname">Last name:</label>
+            <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name" name="lastname" ng-model="user.lastname" required>
+        </div>
+
+        <div class="form-group">
+            <label for="username">User name:</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter User Name" name="username" ng-model="user.username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" ng-model="user.password" required>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+
+<style>
+    .bg-4 {
+        background-color: #2f2f2f;
+        color: #ffffff;
+    }
+</style>
+
+<footer class="container-fluid bg-4 text-center">
+    <p>Made By Konstantinos Seintaridis <a href="https://github.com/seintaridis/boatApp">Github</a></p>
+</footer>
