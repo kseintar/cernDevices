@@ -1,6 +1,6 @@
 # Deployment
 
-1) gradle build
+1) gradle build -x test (instead of gradle build because I dont have tests in this example)
 2) java -jar build/libs/cernDevices-0.0.1-SNAPSHOT.jar
 3) open on your browser http://localhost:8090/#/
 
